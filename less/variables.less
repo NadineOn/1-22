@@ -1,0 +1,73 @@
+//color
+@white: #fff;
+@black: #000;
+@yellow: #F9E208;
+@blue: #43D6B9;
+
+@robotoCondBold: 'robotobold_condensed', sans-serif;
+@robotoLight: 'roboto_light', sans-serif;
+@robotoCond: 'robotocondensed', sans-serif;
+
+.transition-all {
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  transition: all .25s;
+}
+.border-radius (@border-radius) {
+  -webkit-border-radius: @border-radius;
+  -moz-border-radius: @border-radius;
+  border-radius: @border-radius;
+}
+.inline-block-top {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+}
+.inline-block-middle {
+  display: inline-block;
+  vertical-align: middle;
+  *display: inline;
+  zoom: 1;
+}
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow!important;
+  -moz-box-shadow: @shadow!important;
+  box-shadow: @shadow!important;
+}
+.opacity {
+  -moz-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  filter: ~"alpha(opacity=0)";
+}
+.gradient (@colorTop, @colorBottom) {
+  background: @colorTop; /* Old browsers */
+  background: -moz-linear-gradient(top,  @colorTop 0%, @colorBottom  100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@colorTop), color-stop(100%,@colorBottom )); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  @colorTop 0%,@colorBottom  100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  @colorTop 0%,@colorBottom  100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  @colorTop 0%,@colorBottom  100%); /* IE10+ */
+  background: linear-gradient(to bottom,  @colorTop 0%, @colorBottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@colorTop', endColorstr='@colorBottom ',GradientType=0 ); /* IE6-9 */
+}
+.placeholder(@color) {
+  &::-moz-placeholder {
+    text-overflow: ellipsis;
+    color: @color;
+  }
+  &::-webkit-input-placeholder {
+    text-overflow: ellipsis;
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    text-overflow: ellipsis;
+    color: @color;
+  }
+}

@@ -1,0 +1,183 @@
+.transition-all {
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  transition: all .25s;
+}
+.inline-block-top {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  zoom: 1;
+}
+.inline-block-middle {
+  display: inline-block;
+  vertical-align: middle;
+  *display: inline;
+  zoom: 1;
+}
+.opacity {
+  -moz-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+@font-face {
+  font-family: 'robotobold_condensed';
+  src: url('../fonts/roboto-condBold/Roboto-BoldCondensed-webfont.eot');
+  src: url('../fonts/roboto-condBold/Roboto-BoldCondensed-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-condBold/Roboto-BoldCondensed-webfont.woff2') format('woff2'), url('../fonts/roboto-condBold/Roboto-BoldCondensed-webfont.woff') format('woff'), url('../fonts/roboto-condBold/Roboto-BoldCondensed-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'robotobold_light';
+  src: url('../fonts/roboto-light/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light/roboto-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'robotocondensed';
+  src: url('../fonts/roboto-cond/Roboto-Condensed-webfont.eot');
+  src: url('../fonts/roboto-cond/Roboto-Condensed-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-cond/Roboto-Condensed-webfont.woff2') format('woff2'), url('../fonts/roboto-cond/Roboto-Condensed-webfont.woff') format('woff'), url('../fonts/roboto-cond/Roboto-Condensed-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  font-size: 62.5%;
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 47%;
+  }
+}
+@media (max-width: 992px) {
+  html {
+    font-size: 43%;
+  }
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  min-width: 320px;
+}
+.b-page_main {
+  padding-right: 65px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.b-page_main .row {
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .b-page_main {
+    padding-top: 50px;
+    padding-right: 15px;
+    overflow: auto;
+  }
+}
+.fixed-panel {
+  background: #000000;
+  color: #ffffff;
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 15;
+}
+@media (max-width: 992px) {
+  .fixed-panel {
+    width: 100%;
+    height: 50px;
+  }
+}
+.b-page__item_creative {
+  background: url(../img/fon1.jpg) no-repeat;
+}
+.b-page__item_critical {
+  background: #f9e208;
+}
+.b-page__item_professional {
+  background: url(../img/fon2.jpg) no-repeat;
+}
+.b-page__item {
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  padding-bottom: 20rem;
+}
+@media (max-width: 992px) {
+  .b-page__item {
+    height: auto;
+  }
+}
+.b-main-slider {
+  padding: 5rem 3.5rem 0;
+}
+.b-main-slider__dotes {
+  margin: 0 0 30px;
+}
+.b-main-slider__h2 {
+  font: 3.3rem/3.8rem 'robotocondensed', sans-serif;
+  margin: 0 0 3rem;
+  position: relative;
+  padding: 0 0 3rem;
+}
+.b-main-slider__h2:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  width: 11.5rem;
+  height: .6rem;
+}
+.b-main-slider__txt {
+  font: 1.6rem/3rem 'roboto_light', sans-serif;
+}
+.b-bot-dotes {
+  background: url(../img/dotes_bot_1.png) repeat-x;
+  height: 88px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.b-bot-dotes_dashed {
+  background-image: url(../img/dotes_bot_2.png);
+  height: 91px;
+}
+.b-info {
+  background: #ffffff;
+  position: absolute;
+  bottom: -400px;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5rem 2rem;
+}
+.b-info:before {
+  background: url(../img/wave.png) 50% 0 no-repeat;
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  overflow: hidden;
+}
+.b-info__title {
+  color: #43d6b9;
+  font: 1.5rem 'robotocondensed', sans-serif;
+  padding: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+.b-info__link {
+  margin: 0 0 1.5rem;
+}
+.b-info__link a {
+  color: #000000;
+  font: 18px 'roboto_light', sans-serif;
+}

@@ -1,0 +1,133 @@
+html {
+  font-size: 62.5%; //desktop
+  @media (min-width: @screen-md-min) { //tablet
+    font-size: 47%;
+  }
+  @media (max-width: @screen-md-min) { //mobile
+    font-size: 43%;
+  }
+}
+body, html {
+  height: 100%
+}
+body {
+  min-width: 320px;
+}
+.b-page_main {
+  padding-right: 65px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  .row {
+    height: 100%;
+  }
+  @media (max-width: @screen-md-min) { //tablet+mobile
+    padding-top: 50px;
+    padding-right: 15px;
+    overflow: auto;
+  }
+}
+//fixed panel
+.fixed-panel {
+  background: @black;
+  color: @white;
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 15;
+  @media (max-width: @screen-md-min) { //tablet+mobile
+    width: 100%;
+    height: 50px;
+  }
+}
+
+//main page slides
+.b-page__item_creative {
+  background: url(../img/fon1.jpg) no-repeat;
+}
+.b-page__item_critical {
+  background: @yellow;
+}
+.b-page__item_professional {
+  background: url(../img/fon2.jpg) no-repeat;
+}
+.b-page__item {
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  padding-bottom: 20rem;
+  @media (max-width: @screen-md-min) { //tablet+mobile
+    height: auto;
+  }
+}
+.b-main-slider {
+  padding: 5rem 3.5rem 0;
+}
+.b-main-slider__dotes {
+  margin: 0 0 30px;
+}
+.b-main-slider__h2 {
+  font: 3.3rem/3.8rem @robotoCond;
+  margin: 0 0 3rem;
+  position: relative;
+  padding: 0 0 3rem;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: @black;
+    width: 11.5rem;
+    height: .6rem;
+  }
+}
+.b-main-slider__txt {
+  font: 1.6rem/3rem @robotoLight;
+}
+.b-bot-dotes {
+  background: url(../img/dotes_bot_1.png) repeat-x;
+  height: 88px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.b-bot-dotes_dashed {
+  background-image: url(../img/dotes_bot_2.png);
+  height: 91px;
+}
+
+//
+.b-info {
+  background: @white;
+  position: absolute;
+  bottom: -400px;
+  left: 0;
+  width: 100%;
+  padding: 1rem 5rem 2rem;
+  &:before {
+    background: url(../img/wave.png) 50% 0 no-repeat;
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+  }
+}
+.b-info__title {
+  color: @blue;
+  font: 1.5rem @robotoCond;
+  padding: 2rem 0 1rem;
+  text-transform: uppercase;
+}
+.b-info__link {
+  margin: 0 0 1.5rem;
+  a {
+    color: @black;
+    font: 18px @robotoLight;
+  }
+}
