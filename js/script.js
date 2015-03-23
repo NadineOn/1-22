@@ -18,20 +18,29 @@ var AppNS = {};
         //    AppNS.clickHoverInfoBlock();
         //}
 
+        AppNS.showMenu();
+
+        var windowHeight = $(window).height();
+
+        $(window).resize(function(){
+            windowHeight = $(window).height();
+        })
+
         if (!AppNS.isTouchDevice()) {
             $('.b-page__item').hover(function(){
+                console.log( Math.round(windowHeight*0.7))
                 $(this).find('.b-info').stop().animate({
-                    bottom: 0
+                    top: Math.round(windowHeight)*0.7+'px'
                 })
             }, function() {
                 $(this).find('.b-info').stop().animate({
-                    bottom: '-400px'
+                    top: '120%'
                 })
             });
         } else {
             $('.b-page__item').click(function(){
                 $(this).find('.b-info').stop().animate({
-                    bottom: 0
+                    top: '70%'
                 })
             }/*, function() {
                 $(this).find('.b-info').stop().animate({
@@ -61,6 +70,24 @@ var AppNS = {};
     AppNS.isTouchDevice = function() {
         return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     }
+
+    var $menu = $('.main-panel');
+    AppNS.showMenu = function() {
+        var $pointer = $('.fixed-panel__bars');
+        $pointer.on('click', function(){
+            if (!$menu.hasClass('main-panel_visible')) {
+                $menu.addClass('main-panel_visible');
+            } else {
+                $menu.removeClass('main-panel_visible');
+            }
+        })
+    }
+    //AppNS.resizer = function() {
+    //    $(window).resize(function(){
+    //        $menu.removeClass('main-panel_visible');
+    //    })
+    //}
+
 
     //AppNS.mainSlider = function() {
     //    var slider = $('#slider .bxslider').bxSlider({
