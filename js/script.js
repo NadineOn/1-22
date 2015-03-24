@@ -1,5 +1,5 @@
 var AppNS = {};
-
+var windowHeight, tooltipHeight, tooltipContentHeight;
 (function($, undefined){
 
     /**
@@ -18,23 +18,32 @@ var AppNS = {};
         //    AppNS.clickHoverInfoBlock();
         //}
 
-        AppNS.showMenu();
-
-        var windowHeight = $(window).height();
-
         $(window).resize(function(){
             windowHeight = $(window).height();
-        })
+            tooltipHeight = Math.round(windowHeight*0.7);
+            tooltipContentHeight = windowHeight - tooltipHeight; // 25px - is a wave height
+        }).resize();
 
+        AppNS.setCookie(); // for welcome popup
+
+        AppNS.showMenu();
+
+        //var windowHeight = $(window).height();
+
+        //var tooltipHeight = Math.round(windowHeight*0.7);
+        //var tooltipContentHeight = windowHeight - tooltipHeight; // 25px - is a wave height
         if (!AppNS.isTouchDevice()) {
             $('.b-page__item').hover(function(){
-                console.log( Math.round(windowHeight*0.7))
                 $(this).find('.b-info').stop().animate({
-                    top: Math.round(windowHeight)*0.7+'px'
+                    top: tooltipHeight+'px'
+                }, function() {
+                    $('.b-info').css('height', tooltipContentHeight)
                 })
             }, function() {
                 $(this).find('.b-info').stop().animate({
                     top: '120%'
+                }, function() {
+                    $('.b-info').css('height', 'auto')
                 })
             });
         } else {
@@ -81,6 +90,42 @@ var AppNS = {};
                 $menu.removeClass('main-panel_visible');
             }
         })
+    }
+
+    AppNS.setCookie = function() {
+        var visit = AppNS.getCookie("cookie");
+        if (visit == null) {
+            var $window = $('.welcome-popup');
+            $window.show();
+            setTimeout(function(){
+                $window.stop().animate({
+                    top: '-100%'
+                })
+            }, 2000)
+
+            var expire = new Date();
+            expire = new Date(expire.getTime() + 7776000000);
+            document.cookie = "cookie=here; expires=" + expire;
+        }
+    }
+
+    AppNS.getCookie = function(c_name) {
+        var c_value = document.cookie;
+        var c_start = c_value.indexOf(" " + c_name + "=");
+        if (c_start == -1) {
+            c_start = c_value.indexOf(c_name + "=");
+        }
+        if (c_start == -1) {
+            c_value = null;
+        } else {
+            c_start = c_value.indexOf("=", c_start) + 1;
+            var c_end = c_value.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = c_value.length;
+            }
+            c_value = unescape(c_value.substring(c_start, c_end));
+        }
+        return c_value;
     }
     //AppNS.resizer = function() {
     //    $(window).resize(function(){
