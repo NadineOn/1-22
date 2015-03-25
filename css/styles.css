@@ -82,6 +82,12 @@ a:hover {
   text-decoration: none;
   color: inherit;
 }
+.underline {
+  text-decoration: underline;
+}
+.underline:hover {
+  text-decoration: none;
+}
 .b-page_main {
   padding-right: 65px;
   position: relative;
@@ -338,7 +344,6 @@ a:hover {
 .b-info {
   background: #ffffff;
   position: absolute;
-  top: 120%;
   left: 0;
   width: 100%;
   padding: 1rem 5rem 5rem;
@@ -352,6 +357,13 @@ a:hover {
   width: 100%;
   height: 25px;
   overflow: hidden;
+}
+.b-info.b-info_open {
+  height: 93%!important;
+}
+.b-info.b-info_open .b-info__content {
+  height: 96%;
+  overflow: auto;
 }
 .b-info__title {
   color: #43d6b9;
