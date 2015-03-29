@@ -1,75 +1,78 @@
 var AppNS = {};
-var windowHeight, tooltipHeight, tooltipContentHeight, infoBlockHeight;
+var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHeight;
 (function($, undefined){
 
     /**
      * Init events
      */
     AppNS.init = function() {
-
         $(window).resize(function(){
             windowHeight = $(window).height();
+            windowWidth = $(window).width();
             tooltipHeight = Math.round(windowHeight*0.7);
             tooltipContentHeight = windowHeight - tooltipHeight;
             infoBlockHeight = $('.b-page__item').outerHeight() + 25;// 25px - is a wave height
+            AppNS.showHoverData(windowWidth, infoBlockHeight, tooltipContentHeight);
         }).resize();
 
         AppNS.setCookie(); // for welcome popup
-
         AppNS.showMenu();
         AppNS.showMainInfo();
-
-        if (!AppNS.isTouchDevice()) {
-            $('.b-page__item').hover(function(){
-                console.log(infoBlockHeight)
-                var $infoBlock = $(this).find('.b-info');
-                $infoBlock.stop().animate({
-                    top: tooltipHeight+'px'
-                }, function() {
-                    $infoBlock.css('height', tooltipContentHeight)
-                })
-            }, function() {
-                var $infoBlock = $(this).find('.b-info');
-                $infoBlock.stop().animate({
-                    top: infoBlockHeight+'px'
-                }, function() {
-                    $infoBlock.removeClass('b-info_open').css('height', 'auto')
-                })
-            });
-        } else {
-           /* $('.b-page__item').click(function(){
-                $(this).find('.b-info').stop().animate({
-                    top: '70%'
-                })
-            }, function() {
-                $(this).find('.b-info').stop().animate({
-                    bottom: '-400px'
-                })
-            });*/
-        }
     };
 
     AppNS.showMainInfo = function() {
-        $('.b-info').css('top', infoBlockHeight+'px')
+//        $('.b-info').css('top','110%')
         $('.b-info__more').on('click', function(){
             var $infoBlock = $(this).closest('.b-info');
             $infoBlock.addClass('b-info_open').stop().animate({
                 top: '7%'
             });
-        })
+        });
     }
 
-    AppNS.isTouchDevice = function() {
-        return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-    }
+    AppNS.showHoverData = function(windowWidth, infoBlockHeight, tooltipContentHeight){
+        console.log(windowWidth)
+            if (windowWidth > 992) {
+                $('.b-page__item').removeClass('hidden-mobile');
+            } else {
+                $('.b-page__item').addClass('hidden-mobile');
+            }
+            if (!$('.b-page__item').hasClass('hidden-mobile')) {
+                $('.b-page__item').hover(function(){
+                    console.log('dfdsfdsf')
+                    var $infoBlock = $(this).find('.b-info');
+                    $infoBlock.stop().show().animate({
+                        top: tooltipHeight+'px'
+                    }, function() {
+                        $infoBlock.css('height', tooltipContentHeight)
+                    })
+                }, function() {
+                    var $infoBlock = $(this).find('.b-info');
+                    $infoBlock.stop().animate({
+                        top: '110%'
+                    }, function() {
+                        $infoBlock.hide().removeClass('b-info_open').css('height', 'auto')
+                    })
+                });
+            } else {
+                $('.b-info').hide().removeClass('b-info_open').css({'height': 'auto', 'top': '310%'})
+            }
 
-    var $menu = $('.main-panel');
+
+
+            }
+
+
     AppNS.showMenu = function() {
+        var $menu = $('.main-panel');
         var $pointer = $('.fixed-panel__bars');
+        var $panel = $('.fixed-panel');
         $pointer.on('click', function(){
             if (!$menu.hasClass('main-panel_visible')) {
+                $panel.addClass('fixed-panel_opened');
                 $menu.addClass('main-panel_visible');
             } else {
+                $panel.removeClass('fixed-panel_opened');
                 $menu.removeClass('main-panel_visible');
             }
         })
