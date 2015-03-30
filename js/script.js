@@ -18,10 +18,10 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         AppNS.setCookie(); // for welcome popup
         AppNS.showMenu();
         AppNS.showMainInfo();
+        AppNS.formStyler();
     };
 
     AppNS.showMainInfo = function() {
-//        $('.b-info').css('top','110%')
         $('.b-info__more').on('click', function(){
             var $infoBlock = $(this).closest('.b-info');
             $infoBlock.addClass('b-info_open').stop().animate({
@@ -30,37 +30,38 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         });
     }
 
+    AppNS.formStyler =  function() {
+        $('.customSelect, .customCheckbox').styler({
+            //filePlaceholder: 'Добавить логотип'
+        });
+    }
+
     AppNS.showHoverData = function(windowWidth, infoBlockHeight, tooltipContentHeight){
-        console.log(windowWidth)
-            if (windowWidth > 992) {
-                $('.b-page__item').removeClass('hidden-mobile');
-            } else {
-                $('.b-page__item').addClass('hidden-mobile');
-            }
-            if (!$('.b-page__item').hasClass('hidden-mobile')) {
-                $('.b-page__item').hover(function(){
-                    console.log('dfdsfdsf')
-                    var $infoBlock = $(this).find('.b-info');
-                    $infoBlock.stop().show().animate({
-                        top: tooltipHeight+'px'
-                    }, function() {
-                        $infoBlock.css('height', tooltipContentHeight)
-                    })
+        if (windowWidth > 992) {
+            $('.b-page__item').removeClass('hidden-mobile');
+        } else {
+            $('.b-page__item').addClass('hidden-mobile');
+        }
+        if (!$('.b-page__item').hasClass('hidden-mobile')) {
+            $('.b-page__item').hover(function(){
+                var $infoBlock = $(this).find('.b-info');
+                $infoBlock.stop().show().animate({
+                    top: tooltipHeight+'px'
                 }, function() {
-                    var $infoBlock = $(this).find('.b-info');
-                    $infoBlock.stop().animate({
-                        top: '110%'
-                    }, function() {
-                        $infoBlock.hide().removeClass('b-info_open').css('height', 'auto')
-                    })
-                });
-            } else {
-                $('.b-info').hide().removeClass('b-info_open').css({'height': 'auto', 'top': '310%'})
-            }
-
-
-
-            }
+                    $infoBlock.css('height', tooltipContentHeight)
+                })
+            }, function() {
+                var $infoBlock = $(this).find('.b-info');
+                $infoBlock.stop().animate({
+                    top: '110%'
+                }, function() {
+                    $infoBlock.hide().removeClass('b-info_open').css('height', 'auto')
+                })
+            });
+        } else {
+            $('.b-info').hide().removeClass('b-info_open').css({'height': 'auto', 'top': '310%'})
+        }
+    }
 
 
     AppNS.showMenu = function() {
