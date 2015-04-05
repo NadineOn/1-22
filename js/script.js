@@ -19,9 +19,18 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         AppNS.showMenu();
         AppNS.showMainInfo();
         AppNS.formStyler();
+        AppNS.scrollPage();
 
-
+        if ($('#map').length) initialize();
     };
+
+    AppNS.scrollPage = function() {
+        $(".creative-anons__btn").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".speakers").offset().top
+            }, 2000);
+        });
+    }
 
     AppNS.showMainInfo = function() {
         $('.b-info__more').on('click', function(){
@@ -122,3 +131,19 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
     $(AppNS.init);
 
 })(jQuery);
+
+
+function initialize() {
+    var haightAshbury = new google.maps.LatLng(50.4342192, 30.5077357);//(долгота, широта)
+    var mapOptions = {
+        zoom: 16,
+        center: haightAshbury,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    };
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);//инициализация карты
+    marker = new google.maps.Marker({
+        position: haightAshbury,
+        map: map
+    });
+}

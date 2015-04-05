@@ -8,12 +8,23 @@
     <meta name="keywords" content=""/>
 
     <title>Главная</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="css/const.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
+
+    <div class="debug">
+        <a href="index.html">Index</a>
+        <a href="courses.html">Courses-list</a>
+        <a href="courses-detail.html">Courses-detail</a>
+        <a href="articles.html">Articles-list</a>
+        <a href="articles-detail.html">Articles-detail</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+        <a href="speakers.html">Speakers</a>
+        <a href="creative.html">Creative</a>
+        <span data-toggle="modal" data-target="#popupThanks">Thanks popup</span>
+    </div>
 
     <div class="fixed-panel">
         <div class="fixed-panel__bars"><i class="fa fa-bars"></i></div>
@@ -64,23 +75,26 @@
                 <div class="b-info">
                     <div class="b-info__content">
                         <div class="b-info__title">Курсы</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                         <div class="b-info__title">Спикеры</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__title">Курсы</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__title">Спикеры</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__title">Курсы</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__title">Спикеры</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                        <div class="speakers-index">
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/user.jpg" alt="" />
+                            </div>
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/01.jpg" alt="" />
+                            </div>
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/02.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="b-info__title">Интересное</div>
+                        <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                     </div>
                     <div class="b-info__more"><i class="fa fa-chevron-down"></i></div>
                 </div>
@@ -96,11 +110,27 @@
                 <div class="b-info">
                     <div class="b-info__content">
                         <div class="b-info__title">Курсы</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                         <div class="b-info__title">Спикеры</div>
-                        <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                        <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                        <div class="speakers-index">
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/user.jpg" alt="" />
+                            </div>
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/01.jpg" alt="" />
+                            </div>
+                            <div class="speaker__photo">
+                                <img class="speaker-frame" src="img/frame-photo.png" alt="" />
+                                <img class="speaker-user" src="pic/02.jpg" alt="" />
+                            </div>
+                        </div>
+                        <div class="b-info__title">Интересное</div>
+                        <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                        <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                     </div>
                     <div class="b-info__more"><i class="fa fa-chevron-down"></i></div>
                 </div>
@@ -114,12 +144,48 @@
                 </div>
                 <div class="b-info">
                     <div class="b-info__title">Курсы</div>
-                    <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                    <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                    <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                    <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                     <div class="b-info__title">Спикеры</div>
-                    <div class="b-info__link"><a class="underline" href="">Креативное мышление для подростков и их родителей</a></div>
-                    <div class="b-info__link"><a class="underline" href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
+                    <div class="b-info__link"><a href="">Креативное мышление для подростков и их родителей</a></div>
+                    <div class="b-info__link"><a href="">Очень сильно креативное мышление для подростков и их родителей</a></div>
                     <div class="b-info__more"><i class="fa fa-chevron-down"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="popupThanks" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Спасибо! Ваша оплата принята!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="course-info">
+                        <div class="course-info__recommend">Рекомендуется для ребят 12-15 лет</div>
+                        <div class="course-info__title">Развитие детей путем изучения живописи</div>
+                        <div class="course-info__date">21 мая 2015 - 30 августа 2015</div>
+                        <div class="course-info__number">номер заявки: 0275</div>
+                    </div>
+
+                    <div class="form-el">
+                        <label>
+                            <span>ФИО участника</span>
+                            <div class="label-data">Иванов Константин Евгеньевич</div>
+                        </label>
+                        <label>
+                            <span>E-mail</span>
+                            <div class="label-data">kkonstantinov@gmail.com</div>
+                        </label>
+                        <label>
+                            <span>Телефон</span>
+                            <div class="label-data">+38 (050) 052 97 79</div>
+                        </label>
+                        <div class="final-summ">сумма к оплате:  <b>2 700</b> <span>грн</span></div>
+                    </div>
                 </div>
             </div>
         </div>
