@@ -1,23 +1,27 @@
 html {
   font-size: 62.5%; //desktop
-  @media (min-width: @screen-md-min) and (max-width: @screen-lg-min) { //tablet
+  @media (min-width: @screen-sm-min) and (max-width: @screen-lg-min) { //tablet
+    font-size: 52%;
+  }
+  @media (max-width: @screen-sm-min) { //mobile
     font-size: 47%;
   }
-  @media (max-width: @screen-md-min) { //mobile
-    font-size: 43%;
+}
+.debug {
+  position: fixed;
+  bottom: 10%;
+  left: 0;
+  background: rgba(0,0,0, .5);
+  z-index: 100;
+  * {
+    color: @white;
+    padding: .5rem 1rem;
+    display: block;
   }
 }
 h1 {
-  font: 5rem @robotoCond;
+  font: 5rem/4.5rem @robotoCond;
   letter-spacing: .5rem;
-}
-#delCookie {
-  background: @black;
-  color: @white;
-  position: fixed;
-  z-index: 99999;
-  top: 20px;
-  left: 20px;
 }
 body, html {
   height: 100%
@@ -52,6 +56,37 @@ a, a:hover {
   @media (max-width: @screen-md-min) { //tablet+mobile
     padding-top: 50px;
     padding-right: 15px;
+  }
+  &_lightWave {
+    &:before {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 450px;
+      top: 0;
+      left: 0;
+      content: '';
+      background: url(../img/bkg_light.jpg) 50% 100% no-repeat;
+      background-size: cover;
+    }
+  }
+  &_darkWave {
+    &:before {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 276px;
+      top: 0;
+      left: 0;
+      content: '';
+      background: url(../img/bkg_dark.jpg) 50% 100% no-repeat;
+      background-size: cover;
+    }
+    .page-header {
+      text-transform: uppercase;
+      color: @white;
+      margin: 0 0 3rem;
+    }
   }
 }
 
@@ -195,7 +230,7 @@ a, a:hover {
     right: 0;
   }
   @media (max-width: @screen-md-min) {  //tablet+mobile
-    right: -1000px;
+    right: -1200px;
     width: 100%;
     padding-top: 10rem;
     &.main-panel_visible {
@@ -353,25 +388,7 @@ header {
   position: relative;
   z-index: 5;
 }
-//courses
-.b-page_courses {
-  &:before {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 276px;
-    top: 0;
-    left: 0;
-    content: '';
-    background: url(../img/bkg_dark.jpg) 50% 100% no-repeat;
-    background-size: cover;
-  }
-  .page-header {
-    text-transform: uppercase;
-    color: @white;
-    margin: 0 0 3rem;
-  }
-}
+
 .breadcrumb {
   padding: 3.5rem 0 2rem;
   background: none;
@@ -380,6 +397,10 @@ header {
   a, .active {
     font: 1.3rem @robotoMedium;
     color: @black;
+    .underline;
+  }
+  .active {
+    text-decoration: none;
   }
   & > li + li:before {
     content: "|";
@@ -453,7 +474,26 @@ header {
   margin: 0 0 -60px;
 }
 .content-page {
-  padding: 0 0 60px;
+  padding: 0 0 120px;
+}
+.more-loader {
+  .inline-block-top;
+  padding: 50px 0 0;
+  text-transform: uppercase;
+  color: @blueDark;
+  font: 1.4rem @robotoCond;
+  position: relative;
+  margin: 2rem 0 0;
+  &:before {
+    content: '';
+    background: url(../img/more-loader.png) 50% 0 no-repeat;
+    width: 37px;
+    height: 37px;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -18px;
+    position: absolute;
+  }
 }
 .b-footer {
   font: 1.4rem/24px @robotoRegular;
@@ -500,12 +540,15 @@ header {
 }
 
 .items-list {
-  border: 2px solid @black;
+  border-width: 2px;
+  border-style:  solid;
   position: relative;
   margin: 0 0 25px;
   padding: 0 0 12rem;
+  overflow: hidden;
   &__calendar {
-    background: url(../img/calendar.png) 0 0 no-repeat;
+    background-image: url(../img/calendar.png);
+    background-repeat: no-repeat;
     position: absolute;
     padding: 10px 0 0;
     top: -2px;
@@ -520,13 +563,13 @@ header {
     width: 100%;
   }
   &__data {
-    background: @white;
+    display: block;
     position: absolute;
     top: 60%;
     left: 0;
     width: 100%;
     height: 40%;
-    padding: 0 25px 25px;
+    padding: 10px 25px 25px;
     .transition-all;
     &:before {
       content: '';
@@ -535,11 +578,24 @@ header {
       top: -15px;
       left: 0;
       width: 100%;
-      background: url(../img/wave-list.png) repeat-x;
+      background-image: url(../img/wave-list.png);
+      background-repeat: repeat-x;
     }
     &:hover {
       top: 40%;
       height: 60%;
+      .data-txt {
+        display: block;
+      }
+    }
+    @media (max-width: @screen-sm) { //mobile
+      .data-txt {
+        display: block!important;
+      }
+      &:hover {
+        top: 60%;
+        height: 40%;
+      }
     }
   }
 }
@@ -550,11 +606,48 @@ header {
 .content-section {
   position: relative;
   z-index: 3;
+  & > .row {
+    margin-bottom: 4rem;
+  }
+}
+.data-period {
+  font: 1.5rem @robotoLight;
+  margin: 0 0 1.5rem;
+  color: @white;
+  display: block;
+}
+.data-title {
+  font: 2.1rem/2.5rem @robotoCond;
+  margin: 0 0 1.5rem;
+  display: block;
+}
+.data-txt {
+  display: none;
+  font: 1.3rem/1.8rem @robotoLight;
+}
+.items-list_black {
+  border-color: @black;
+  .items-list__data {
+    background: @white;
+    &:before {
+      background-position: 0 -30px;
+    }
+    .data-period {
+      color: #808080;
+    }
+  }
+  .items-list__calendar {
+    background-position: 0 0;
+    color: @black;
+  }
 }
 .items-list_green {
   border-color: @green;
   .items-list__data {
     background: @green;
+    &:before {
+      background-position: 0 -45px;
+    }
   }
   .items-list__calendar {
     background-position: 0 -294px;
@@ -565,6 +658,9 @@ header {
   border-color: @yellow;
   .items-list__data {
     background: @yellow;
+    &:before {
+      background-position: 0 0;
+    }
   }
   .items-list__calendar {
     background-position: 0 -98px;
@@ -575,9 +671,382 @@ header {
   border-color: @pink;
   .items-list__data {
     background: @pink;
+    &:before {
+      background-position: 0 -15px;
+    }
   }
   .items-list__calendar {
     background-position: 0 -196px;
     color: @pink;
+  }
+}
+
+.calendar-widget {
+  border: 2px solid @grayLight;
+  margin: 0 0 25px;
+  &__title {
+    border-bottom: 2px solid @grayLight;
+    font: 1.6rem/4.5rem @robotoCond;
+    padding: 0 2rem;
+    position: relative;
+    text-transform: uppercase;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin: -12px 0 0;
+      right: 25px;
+      background: url(../img/pointer.png) 0 100% no-repeat;
+      width: 23px;
+      height: 23px;
+    }
+  }
+  &__nav {
+    padding: 2rem 0;
+    margin: 0 2rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid @grayLight;
+    li {
+      width: 25%;
+      text-align: center;
+      a {
+        border: none!important;
+        margin: 0;
+        padding: 0;
+        font: 1.5rem @robotoLight;
+        background: none!important;
+        .underline;
+      }
+      &.active a {
+        color: @blue!important;
+        text-decoration: none!important;
+      }
+    }
+  }
+  &__content {
+    padding: 2rem;
+    a {
+      color: @black;
+      .inline-block-top;
+      margin: 0 0 1.9rem;
+      font: 1.5rem @robotoMedium;
+      .underline;
+    }
+  }
+  &__down {
+    width: 50%;
+    float: left;
+    color: @white!important;
+    background: @gray;
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+  &__down_light {
+    background: #a6a6a6;
+  }
+}
+
+.course-anons {
+  border: 5px solid @black;
+  background: url(../img/courses.jpg) 50% 0 no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: 0 0 6rem;
+  padding: 6rem 0 0;
+  &__data {
+    background: @white;
+    padding: 3rem 0;
+    .clearfix;
+  }
+  &__recommend {
+    background: @blue;
+    margin: 0 0 3rem;
+    padding: 0 1.5rem;
+    font: 1.3rem/3rem @robotoCond;
+    .inline-block-top;
+  }
+  &__txt {
+    color: @white;
+    font: 1.6rem/2.5rem @robotoLight;
+    margin: 0 0 6rem;
+    padding: 0 9rem;
+  }
+  h1 {
+    color: @white;
+    margin: 0 0 3rem;
+    padding: 0 15rem;
+  }
+  .course-col {
+    width: 33%;
+    float: left;
+    position: relative;
+    text-transform: uppercase;
+    font: 1.8rem @robotoMedium;
+    &__summ {
+      font: 3.6rem @robotoCond;
+    }
+    &__currency {
+      text-transform: none;
+    }
+    &__btn {
+      background: url(../img/btn.png) no-repeat;
+      width: 251px;
+      height: 79px;
+      color: @white;
+      font: 2.6rem @robotoCond;
+      border: none;
+      .inline-block-top;
+      text-transform: uppercase;
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      margin: 0 0 0 -125px;
+    }
+  }
+  @media (max-width: @screen-sm) {
+    padding-top: 3rem;
+    &__data {
+      padding: 0;
+    }
+    &__txt, h1 {
+      padding: 2rem;
+    }
+    &__txt {
+      margin: 0 0 3rem;
+    }
+    .course-col {
+      width: 100%;
+      float: none;
+      padding: 1.5rem 0;
+      &__btn {
+        position: relative;
+        margin: 0;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.content-style {
+  h1 {
+    font: 2.1rem @robotoRegular;
+    letter-spacing: 0;
+  }
+  & > * {
+    margin: 0 0 2rem;
+    font: 1.6rem/2.5rem @robotoLight;
+  }
+  ul {
+    list-style: disc inside;
+  }
+  ol {
+    list-style: decimal inside;
+  }
+  li {
+    margin: 0 0 .5rem;
+  }
+}
+
+.part-title {
+  text-align: center;
+  margin: 0 0 5rem;
+  position: relative;
+  z-index: 5;
+  background: @white;
+  h2 {
+    font: 2.1rem @robotoCond;
+    text-transform: uppercase;
+    border-bottom: 5px solid @black;
+    padding: 0 0 .5rem;
+    display: inline;
+  }
+}
+
+.speaker {
+  .clearfix;
+  &__photo {
+    position: relative;
+    width: 45%;
+    float: left;
+    text-align: center;
+  }
+  &-frame {
+    position: absolute;
+    background: url(../img/frame-photo.png) no-repeat;
+    width: 160px;
+    height: 163px;
+    z-index: 10;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -80px;
+  }
+  &-user {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    z-index: 1;
+  }
+  &__data {
+    width: 55%;
+    float: left;
+    font-family: @robotoLight;
+    line-height: 2.4rem;
+  }
+  &-name {
+    font: 2.4rem @robotoCond;
+    margin: 0 0 1.5rem;
+  }
+  &-vacancy {
+    color: #808080;
+    font-size: 1.6rem;
+    margin: 0 0 1rem;
+  }
+  &-txt {
+    font-size: 1.8rem;
+  }
+  &-row {
+    position: relative;
+    .clearfix;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: @grayLight;
+      display: block;
+      z-index: 1;
+    }
+  }
+  @media (max-width: @screen-md) {
+    &-frame {
+      width: 120px;
+      height: 120px;
+      margin: 0 0 0 -60px;
+      background-size: cover;
+    }
+    &-user {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  @media (max-width: @screen-sm) {
+    margin: 0 0 3rem;
+    padding: 0 0 3rem;
+    border-bottom: 2px solid @grayLight;
+    &-row {
+      &:before {
+        display: none
+      }
+    }
+    &__photo {
+      width: 32%;
+    }
+    &__data {
+      width: 68%;
+    }
+  }
+  @media (max-width: @screen-xs) {
+    &-frame {
+      width: 70px;
+      height: 70px;
+      margin: 0 0 0 -35px;
+      background-size: cover;
+    }
+    &-user {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.btn-more {
+  background: url(../img/btn-more.png) no-repeat;
+  width: 160px;
+  height: 56px;
+  .inline-block-top;
+  color: @white!important;
+  text-transform: uppercase;
+  font: 1.4rem/60px @robotoCond;
+}
+
+.articles {
+  &__photo {
+    display: block;
+    position: relative;
+    margin: 0 0 1.5rem;
+    img {
+      width: 100%;
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: url(../img/wave-articles.png) no-repeat;
+      background-size: cover;
+    }
+  }
+  &__title {
+    color: @black;
+    .underline;
+    font: 1.8rem/2.4rem @robotoMedium;
+  }
+  @media (max-width: @screen-xs) {
+    &__title {
+      margin: 0 0 3rem;
+      .inline-block-top;
+    }
+  }
+}
+
+.creative-anons {
+  border: 5px solid @black;
+  background: url(../img/dotes.png) #f9f9f9 repeat;
+  text-align: center;
+  margin: 0 0 6rem;
+  padding: 6rem 0 4rem;
+  &__txt {
+    font: 1.6rem/2.5rem @robotoLight;
+    margin: 0 0 4rem;
+    padding: 0 9rem;
+  }
+  &__btn {
+    margin: 0 auto;
+    cursor: pointer;
+    background: url(../img/pointer-large.png) 0 0 no-repeat;
+    width: 50px;
+    height: 51px;
+  }
+  h1 {
+    margin: 0 0 3rem;
+    padding: 0 15rem 3rem;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 0 -50px;
+      width: 100px;
+      height: 5px;
+      background: @black;
+    }
+  }
+  @media (max-width: @screen-sm) {
+    padding-top: 3rem;
+    &__txt, h1 {
+      padding: 2rem 2rem 3rem;
+    }
+    &__txt {
+      margin: 0 0 3rem;
+    }
   }
 }

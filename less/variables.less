@@ -3,6 +3,7 @@
 @black: #000;
 @yellow: #F9E208;
 @blue: #43D6B9;
+@blueDark: #0851c4;
 @gray: #4d4d4d;
 @gray2: #424146;
 @grayLight: #E6E6E6;
@@ -10,6 +11,15 @@
 @yellow2: #FBEB0A;
 @pink: #F80082;
 
+//media
+@screen-md: 1100px;
+@media (min-width:@screen-lg) {
+  .container {
+    width: 960px;
+  }
+}
+
+//fonts
 @robotoCondBold: 'robotobold_condensed', sans-serif;
 @robotoLight: 'roboto_light', sans-serif;
 @robotoCond: 'robotocondensed', sans-serif;
@@ -20,6 +30,11 @@
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   transition: all .25s;
+}
+.transform(@transform){
+  -ms-transform: @transform; /* IE 9 */
+  -webkit-transform: @transform; /* Chrome, Safari, Opera */
+  transform: @transform;
 }
 .border-radius (@border-radius) {
   -webkit-border-radius: @border-radius;
@@ -77,11 +92,5 @@
   &:-ms-input-placeholder {
     text-overflow: ellipsis;
     color: @color;
-  }
-}
-
-@media (min-width:@screen-lg) {
-  .container {
-    width: 960px;
   }
 }

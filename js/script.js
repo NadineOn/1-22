@@ -19,6 +19,8 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         AppNS.showMenu();
         AppNS.showMainInfo();
         AppNS.formStyler();
+
+
     };
 
     AppNS.showMainInfo = function() {
@@ -37,13 +39,14 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
     }
 
     AppNS.showHoverData = function(windowWidth, infoBlockHeight, tooltipContentHeight){
+        var el = $('.b-page__item');
         if (windowWidth > 992) {
-            $('.b-page__item').removeClass('hidden-mobile');
+            el.removeClass('hidden-mobile');
         } else {
-            $('.b-page__item').addClass('hidden-mobile');
+            el.addClass('hidden-mobile');
         }
-        if (!$('.b-page__item').hasClass('hidden-mobile')) {
-            $('.b-page__item').hover(function(){
+        if (!el.hasClass('hidden-mobile')) {
+            el.hover(function(){
                 var $infoBlock = $(this).find('.b-info');
                 $infoBlock.stop().show().animate({
                     top: tooltipHeight+'px'
