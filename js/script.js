@@ -45,6 +45,15 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         $('.customSelect, .customCheckbox').styler({
             //filePlaceholder: 'Добавить логотип'
         });
+
+        var parentsForm = $('.hidden-form').html();
+        $('.user-age').change(function() {
+            if ($(this).val() < 18) {
+                $('.form-el__parents').html(parentsForm);
+            } else {
+                $('.form-el__parents').empty();
+            }
+        })
     }
 
     AppNS.showHoverData = function(windowWidth, infoBlockHeight, tooltipContentHeight){

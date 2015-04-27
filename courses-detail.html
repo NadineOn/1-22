@@ -237,40 +237,44 @@
                         <h2>Контакты участника</h2>
                         <label>
                             <span>ФИО участника</span>
-                            <input class="field" type="text" />
+                            <input class="field" type="text" required/>
                         </label>
                         <label>
                             <span>E-mail</span>
-                            <input class="field" type="email" />
+                            <input class="field" type="email" required/>
                         </label>
                         <label>
                             <span>Телефон</span>
-                            <input class="field" type="text" />
+                            <input class="field" type="number" required/>
                         </label>
                         <label>
                             <span>Возраст</span>
-                            <input class="field field_small" type="text" />
+                            <input class="user-age field field_small" type="number" required maxlength="11"/>
                         </label>
-                        <br/>
-                        <h2>Контакты родителей</h2>
-                        <label>
-                            <span>ФИО</span>
-                            <input class="field" type="text" />
-                        </label>
-                        <label>
-                            <span>E-mail</span>
-                            <input class="field" type="email" />
-                        </label>
-                        <label>
-                            <span>Телефон</span>
-                            <input class="field" type="text" />
-                        </label>
+                        <div class="form-el__parents">
+                        </div>
                         <label class="checkbox-label"><input type="checkbox" class="customCheckbox" />Подписаться на рассылку</label>
                         <label class="checkbox-label"><input type="checkbox" class="customCheckbox" />С <a href="">условиями оплаты</a> и участия ознакомлен и согласен</label>
                         <div class="final-summ">сумма к оплате:  <b>2 700</b> <span>грн</span></div>
                         <br/>
                         <input type="submit" value="отправить" />
                     </form>
+
+                    <div class="hidden-form">
+                        <h2>Контакты родителей</h2>
+                        <label>
+                            <span>ФИО</span>
+                            <input class="field" type="text" required />
+                        </label>
+                        <label>
+                            <span>E-mail</span>
+                            <input class="field" type="email" required />
+                        </label>
+                        <label>
+                            <span>Телефон</span>
+                            <input class="field" type="text" type="number" required maxlength="11"/>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>

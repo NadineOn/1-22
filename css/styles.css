@@ -9097,7 +9097,7 @@ a:hover {
   height: 93%!important;
 }
 .b-info.b-info_open .b-info__content {
-  height: 96%;
+  height: 100%;
   overflow: auto;
 }
 .b-info__title {
@@ -10189,6 +10189,12 @@ header {
 .form-el h2 {
   font: 2.1rem 'robotocondensed', sans-serif;
   margin: 0 0 2rem;
+}
+.form-el__parents {
+  padding: 2rem 0 0;
+}
+.hidden-form {
+  display: none!important;
 }
 .modal-backdrop.in {
   opacity: 0.8;
