@@ -6,6 +6,18 @@ html {
   @media (max-width: @screen-sm-min) { //mobile
     font-size: 47%;
   }
+  &.older-ie9 {
+    line-height: 1.4em;
+    .b-main-slider__txt, .course-anons__txt, .content-style > *, .article-anons__txt, .creative-anons__txt, .creative-anons__txt{
+      line-height: 1.8em;
+    }
+    .menu-item__link, .lang-item__link, .calendar-widget__title {
+      line-height: 2.5em;
+    }
+    .btn-more {
+      line-height: 4em;
+    }
+  }
 }
 .debug {
   position: fixed;
@@ -1000,10 +1012,13 @@ header {
 }
 
 .articles {
+  &__item {
+    margin: 0 0 2rem;
+  }
   &__photo {
     display: block;
     position: relative;
-    margin: 0 0 1.5rem;
+    margin: 0 0 .5rem;
     img {
       width: 100%;
     }

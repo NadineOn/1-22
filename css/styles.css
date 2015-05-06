@@ -8742,6 +8742,25 @@ html {
     font-size: 47%;
   }
 }
+html.older-ie9 {
+  line-height: 1.4em;
+}
+html.older-ie9 .b-main-slider__txt,
+html.older-ie9 .course-anons__txt,
+html.older-ie9 .content-style > *,
+html.older-ie9 .article-anons__txt,
+html.older-ie9 .creative-anons__txt,
+html.older-ie9 .creative-anons__txt {
+  line-height: 1.8em;
+}
+html.older-ie9 .menu-item__link,
+html.older-ie9 .lang-item__link,
+html.older-ie9 .calendar-widget__title {
+  line-height: 2.5em;
+}
+html.older-ie9 .btn-more {
+  line-height: 4em;
+}
 .debug {
   position: fixed;
   bottom: 10%;
@@ -8756,7 +8775,7 @@ html {
   cursor: pointer !important;
 }
 h1 {
-  font: 5rem/4.5rem 'robotocondensed', sans-serif;
+  font: 5rem/4.5rem 'robotocondensed', Arial, sans-serif;
   letter-spacing: .5rem;
 }
 body,
@@ -8939,7 +8958,7 @@ a:hover {
   font-size: 2.2rem;
 }
 .panel-item__lang {
-  font: 1.8rem/53px 'robotoregular', sans-serif;
+  font: 1.8rem/53px 'robotoregular', Arial, sans-serif;
 }
 .main-panel {
   position: fixed;
@@ -9004,7 +9023,7 @@ a:hover {
   display: block;
 }
 .menu-item__link {
-  font: 1.4rem/5rem 'robotobold_condensed', sans-serif;
+  font: 1.4rem/5rem 'robotobold_condensed', Arial, sans-serif;
   text-transform: uppercase;
   color: #000000;
 }
@@ -9012,7 +9031,7 @@ a:hover {
   border-top: 1px solid #e6e6e6;
 }
 .lang-item__link {
-  font: 1.2rem/5rem 'robotobold_condensed', sans-serif;
+  font: 1.2rem/5rem 'robotobold_condensed', Arial, sans-serif;
   text-transform: uppercase;
   color: #424146;
 }
@@ -9045,7 +9064,7 @@ a:hover {
   margin: 0 0 30px;
 }
 .b-main-slider__h2 {
-  font: 3.1rem/3.8rem 'robotocondensed', sans-serif;
+  font: 3.1rem/3.8rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 3rem;
   position: relative;
   padding: 0 0 3rem;
@@ -9060,7 +9079,7 @@ a:hover {
   height: .6rem;
 }
 .b-main-slider__txt {
-  font: 1.6rem/3rem 'roboto_light', sans-serif;
+  font: 1.6rem/3rem 'roboto_light', Arial, sans-serif;
 }
 .b-bot-dotes {
   background: url(../img/dotes_bot_1.png) repeat-x;
@@ -9102,7 +9121,7 @@ a:hover {
 }
 .b-info__title {
   color: #43d6b9;
-  font: 1.5rem 'robotocondensed', sans-serif;
+  font: 1.5rem 'robotocondensed', Arial, sans-serif;
   padding: 2rem 0 1rem;
   text-transform: uppercase;
 }
@@ -9111,7 +9130,7 @@ a:hover {
 }
 .b-info__link a {
   color: #000000;
-  font: 18px 'roboto_light', sans-serif;
+  font: 18px 'roboto_light', Arial, sans-serif;
   text-decoration: underline;
 }
 .b-info__link a:hover {
@@ -9156,7 +9175,7 @@ header {
 }
 .breadcrumb a,
 .breadcrumb .active {
-  font: 1.3rem 'robotomedium';
+  font: 1.3rem 'robotomedium', Arial, sans-serif;
   color: #000000;
   text-decoration: underline;
 }
@@ -9199,7 +9218,7 @@ header {
 }
 .filter-courses .jq-selectbox-wrapper .jq-selectbox__select {
   color: #000000;
-  font: 16px/50px 'roboto_light', sans-serif;
+  font: 16px/50px 'roboto_light', Arial, sans-serif;
   padding: 0 6.5rem 0 2.5rem ;
   width: 100%!important;
 }
@@ -9250,7 +9269,7 @@ header {
   padding: 50px 0 0;
   text-transform: uppercase;
   color: #0851c4;
-  font: 1.4rem 'robotocondensed', sans-serif;
+  font: 1.4rem 'robotocondensed', Arial, sans-serif;
   position: relative;
   margin: 2rem 0 0;
 }
@@ -9265,7 +9284,7 @@ header {
   position: absolute;
 }
 .b-footer {
-  font: 1.4rem/24px 'robotoregular', sans-serif;
+  font: 1.4rem/24px 'robotoregular', Arial, sans-serif;
   color: #424146;
   height: 60px;
   text-align: center;
@@ -9331,7 +9350,7 @@ header {
   width: 89px;
   height: 98px;
   text-align: center;
-  font: 40px/40px 'robotocondensed', sans-serif;
+  font: 40px/40px 'robotocondensed', Arial, sans-serif;
 }
 .items-list__photo {
   width: 100%;
@@ -9375,7 +9394,7 @@ header {
   }
 }
 .calendar-month {
-  font: 13px 'robotocondensed', sans-serif;
+  font: 13px 'robotocondensed', Arial, sans-serif;
   color: #000000 !important;
 }
 .content-section {
@@ -9386,19 +9405,19 @@ header {
   margin-bottom: 4rem;
 }
 .data-period {
-  font: 1.5rem 'roboto_light', sans-serif;
+  font: 1.5rem 'roboto_light', Arial, sans-serif;
   margin: 0 0 1.5rem;
   color: #ffffff;
   display: block;
 }
 .data-title {
-  font: 2.1rem/2.5rem 'robotocondensed', sans-serif;
+  font: 2.1rem/2.5rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 1.5rem;
   display: block;
 }
 .data-txt {
   display: none;
-  font: 1.3rem/1.8rem 'roboto_light', sans-serif;
+  font: 1.3rem/1.8rem 'roboto_light', Arial, sans-serif;
 }
 .items-list_black {
   border-color: #000000;
@@ -9461,7 +9480,7 @@ header {
 }
 .calendar-widget__title {
   border-bottom: 2px solid #e6e6e6;
-  font: 1.6rem/4.5rem 'robotocondensed', sans-serif;
+  font: 1.6rem/4.5rem 'robotocondensed', Arial, sans-serif;
   padding: 0 2rem;
   position: relative;
   text-transform: uppercase;
@@ -9490,7 +9509,7 @@ header {
   border: none!important;
   margin: 0;
   padding: 0;
-  font: 1.5rem 'roboto_light', sans-serif;
+  font: 1.5rem 'roboto_light', Arial, sans-serif;
   background: none!important;
   text-decoration: underline;
 }
@@ -9514,7 +9533,7 @@ header {
   *display: inline;
   zoom: 1;
   margin: 0 0 1.9rem;
-  font: 1.5rem 'robotomedium';
+  font: 1.5rem 'robotomedium', Arial, sans-serif;
   text-decoration: underline;
 }
 .calendar-widget__content a:hover {
@@ -9584,7 +9603,7 @@ header {
   background: #43d6b9;
   margin: 0 0 3rem;
   padding: 0 1.5rem;
-  font: 1.3rem/3rem 'robotocondensed', sans-serif;
+  font: 1.3rem/3rem 'robotocondensed', Arial, sans-serif;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -9592,7 +9611,7 @@ header {
 }
 .course-anons__txt {
   color: #ffffff;
-  font: 1.6rem/2.5rem 'roboto_light', sans-serif;
+  font: 1.6rem/2.5rem 'roboto_light', Arial, sans-serif;
   margin: 0 0 6rem;
   padding: 0 9rem;
 }
@@ -9606,10 +9625,10 @@ header {
   float: left;
   position: relative;
   text-transform: uppercase;
-  font: 1.8rem 'robotomedium';
+  font: 1.8rem 'robotomedium', Arial, sans-serif;
 }
 .course-anons .course-col__summ {
-  font: 3.6rem 'robotocondensed', sans-serif;
+  font: 3.6rem 'robotocondensed', Arial, sans-serif;
 }
 .course-anons .course-col__currency {
   text-transform: none;
@@ -9619,7 +9638,7 @@ header {
   width: 251px;
   height: 79px;
   color: #ffffff;
-  font: 2.6rem 'robotocondensed', sans-serif;
+  font: 2.6rem 'robotocondensed', Arial, sans-serif;
   border: none;
   display: inline-block;
   vertical-align: top;
@@ -9658,18 +9677,18 @@ header {
   }
 }
 .content-style h1 {
-  font: 2.1rem 'robotoregular', sans-serif;
+  font: 2.1rem 'robotoregular', Arial, sans-serif;
   letter-spacing: 0;
 }
 .content-style h2 {
-  font: 2.1rem 'robotocondensed', sans-serif;
+  font: 2.1rem 'robotocondensed', Arial, sans-serif;
 }
 .content-style h3 {
-  font: 2.1rem 'robotocondensed', sans-serif;
+  font: 2.1rem 'robotocondensed', Arial, sans-serif;
 }
 .content-style > * {
   margin: 0 0 2rem;
-  font: 1.6rem/2.5rem 'roboto_light', sans-serif;
+  font: 1.6rem/2.5rem 'roboto_light', Arial, sans-serif;
 }
 .content-style ul {
   list-style: disc inside;
@@ -9728,7 +9747,7 @@ header {
   background: #ffffff;
 }
 .part-title h2 {
-  font: 2.1rem 'robotocondensed', sans-serif;
+  font: 2.1rem 'robotocondensed', Arial, sans-serif;
   text-transform: uppercase;
   border-bottom: 5px solid #000000;
   padding: 0 0 .5rem;
@@ -9791,11 +9810,11 @@ header {
 .speaker__data {
   width: 55%;
   float: left;
-  font-family: 'roboto_light', sans-serif;
+  font-family: 'roboto_light', Arial, sans-serif;
   line-height: 2.4rem;
 }
 .speaker-name {
-  font: 2.4rem 'robotocondensed', sans-serif;
+  font: 2.4rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 1.5rem;
 }
 .speaker-vacancy {
@@ -9902,12 +9921,15 @@ header {
   zoom: 1;
   color: #ffffff !important;
   text-transform: uppercase;
-  font: 1.4rem/60px 'robotocondensed', sans-serif;
+  font: 1.4rem/60px 'robotocondensed', Arial, sans-serif;
+}
+.articles__item {
+  margin: 0 0 2rem;
 }
 .articles__photo {
   display: block;
   position: relative;
-  margin: 0 0 1.5rem;
+  margin: 0 0 .5rem;
 }
 .articles__photo img {
   width: 100%;
@@ -9926,7 +9948,7 @@ header {
 .articles__title {
   color: #000000;
   text-decoration: underline;
-  font: 1.8rem/2.4rem 'robotomedium';
+  font: 1.8rem/2.4rem 'robotomedium', Arial, sans-serif;
 }
 .articles__title:hover {
   text-decoration: none;
@@ -9946,7 +9968,7 @@ header {
   padding: 6rem 0 4rem;
 }
 .creative-anons__txt {
-  font: 1.6rem/2.5rem 'roboto_light', sans-serif;
+  font: 1.6rem/2.5rem 'roboto_light', Arial, sans-serif;
   margin: 0 0 4rem;
   padding: 0 9rem;
 }
@@ -9993,7 +10015,7 @@ header {
   color: #ffffff;
 }
 .article-anons__txt {
-  font: 1.6rem/2.5rem 'roboto_light', sans-serif;
+  font: 1.6rem/2.5rem 'roboto_light', Arial, sans-serif;
   margin: 0 0 4rem;
   padding: 0 9rem;
 }
@@ -10034,7 +10056,7 @@ header {
 }
 .speaker-list__title {
   text-transform: uppercase;
-  font: 2.1rem/4rem 'robotocondensed', sans-serif;
+  font: 2.1rem/4rem 'robotocondensed', Arial, sans-serif;
   display: inline-block;
   vertical-align: top;
   *display: inline;
@@ -10063,7 +10085,7 @@ header {
 }
 .contact-item {
   position: relative;
-  font: 1.3rem 'roboto_light', sans-serif;
+  font: 1.3rem 'roboto_light', Arial, sans-serif;
   padding: 1rem 0 0 35px;
   margin: 0 0 1.5rem;
 }
@@ -10144,7 +10166,7 @@ header {
   margin: 0 0 1.5rem;
 }
 .form-el label span {
-  font: 1.4rem 'roboto_light', sans-serif;
+  font: 1.4rem 'roboto_light', Arial, sans-serif;
   color: #808080;
   display: block;
   padding: 0 0 1rem .3rem;
@@ -10154,20 +10176,20 @@ header {
   line-height: 2rem;
 }
 .form-el label.checkbox-label {
-  font: 1.4rem 'robotomedium';
+  font: 1.4rem 'robotomedium', Arial, sans-serif;
 }
 .form-el label.checkbox-label a {
   color: #0851c4;
 }
 .form-el .label-data {
-  font: 1.8rem 'robotomedium';
+  font: 1.8rem 'robotomedium', Arial, sans-serif;
   padding: .3rem 0 .7rem;
 }
 .form-el .field {
   border: 2px solid #ccc;
   padding: 0 15px;
   color: #000000;
-  font: 1.8rem/4.5rem 'robotomedium';
+  font: 1.8rem/4.5rem 'robotomedium', Arial, sans-serif;
   display: block;
   width: 100%;
 }
@@ -10181,13 +10203,13 @@ header {
   display: block;
   color: #ffffff !important;
   text-transform: uppercase;
-  font: 1.4rem/60px 'robotocondensed', sans-serif;
+  font: 1.4rem/60px 'robotocondensed', Arial, sans-serif;
   border: none;
   cursor: pointer;
   margin: 0 auto 3rem;
 }
 .form-el h2 {
-  font: 2.1rem 'robotocondensed', sans-serif;
+  font: 2.1rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 2rem;
 }
 .form-el__parents {
@@ -10235,7 +10257,7 @@ header {
   padding: 4rem 0 3rem;
   text-align: center;
   border: none;
-  font: 3.4rem 'robotocondensed', sans-serif;
+  font: 3.4rem 'robotocondensed', Arial, sans-serif;
   letter-spacing: .2rem;
 }
 .course-info {
@@ -10246,12 +10268,12 @@ header {
   margin: 0 0 3rem;
 }
 .course-info__recommend {
-  font: 1.2rem 'robotocondensed', sans-serif;
+  font: 1.2rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 1rem;
 }
 .course-info__title {
   position: relative;
-  font: 2.4rem/2.6rem 'robotocondensed', sans-serif;
+  font: 2.4rem/2.6rem 'robotocondensed', Arial, sans-serif;
   margin: 0 0 2.5rem;
   padding: 0 0 2rem;
 }
@@ -10266,11 +10288,11 @@ header {
   margin: 0 0 0 -50px;
 }
 .course-info__date {
-  font: 1.8rem 'roboto_light', sans-serif;
+  font: 1.8rem 'roboto_light', Arial, sans-serif;
   margin: 0 0 1rem;
 }
 .course-info__number {
-  font: 1.4rem 'roboto_light', sans-serif;
+  font: 1.4rem 'roboto_light', Arial, sans-serif;
 }
 @media (max-width: 768px) {
   .modal-dialog {
@@ -10294,11 +10316,11 @@ header {
   border-top: 2px solid #000000;
   padding: 2rem 0;
   margin: 3rem 0 0;
-  font: 1.8rem 'robotomedium';
+  font: 1.8rem 'robotomedium', Arial, sans-serif;
   text-transform: uppercase;
 }
 .final-summ b {
-  font: 3.6rem 'robotocondensed', sans-serif;
+  font: 3.6rem 'robotocondensed', Arial, sans-serif;
 }
 .final-summ span {
   text-transform: none;

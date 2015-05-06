@@ -22,6 +22,15 @@ var windowHeight, windowWidth, tooltipHeight, tooltipContentHeight, infoBlockHei
         AppNS.scrollPage();
 
         if ($('#map').length) initialize();
+
+        if ((document.all && !document.querySelector) || (document.all && document.querySelector && !document.addEventListener)) {
+            $('body').hide();
+            alert('Ваш браузер устарел, обновите, его!');
+        }
+
+        if (document.all && window.atob || document.addEventListener)  {
+            $('html').addClass('older-ie9');
+        }
     };
 
     AppNS.scrollPage = function() {
