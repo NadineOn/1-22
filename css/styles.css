@@ -8697,7 +8697,12 @@ textarea {
 html {
   font-size: 62.5%;
 }
-@media (min-width: 768px) and (max-width: 1368px) {
+@media (min-width: 1200px) and (max-width: 1368px) {
+  html {
+    font-size: 57%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
   html {
     font-size: 52%;
   }
@@ -9758,7 +9763,6 @@ header {
 }
 .speaker-frame {
   position: absolute;
-  background: url(../img/frame-photo.png) no-repeat;
   width: 160px;
   height: 163px;
   z-index: 10;
@@ -9831,7 +9835,6 @@ header {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 2px;
   height: 100%;
   background: #e6e6e6;
   display: block;

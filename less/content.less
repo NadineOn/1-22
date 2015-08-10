@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%; //desktop
-  @media (min-width: @screen-sm-min) and (max-width: 1368px) { //tablet
+  @media (min-width: @screen-lg) and (max-width: 1368px) {
+    font-size: 57%;
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-lg) { //tablet
     font-size: 52%;
   }
   @media (max-width: @screen-sm-min) { //mobile
@@ -912,7 +915,7 @@ header {
   }
   &-frame {
     position: absolute;
-    background: url(../img/frame-photo.png) no-repeat;
+//    background: url(../img/frame-photo.png) no-repeat;
     width: 160px;
     height: 163px;
     z-index: 10;
@@ -953,7 +956,7 @@ header {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 2px;
+//      width: 2px;
       height: 100%;
       background: @grayLight;
       display: block;
